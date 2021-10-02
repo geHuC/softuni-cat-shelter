@@ -4,6 +4,8 @@ const path = require('path');
 const routes = require('./routes');
 //Setup
 const app = express();
+
+require('./config/mongoose')();
 initHandlebars(app);
 
 //require('./config/hadlebars.js')(app); alt way of doing it in one row 

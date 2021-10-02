@@ -1,0 +1,26 @@
+{
+  "name": "Softuni-cat-shelter",
+  "version": "1.0.0",
+  "description": "Cat shelter exercise from JS back end course from softuni",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geHuC/softuni-cat-shelter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geHuC/softuni-cat-shelter/issues"
+  },
+  "homepage": "https://github.com/geHuC/softuni-cat-shelter#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.8",
+    "nodemon": "^2.0.13"
+  }
+}

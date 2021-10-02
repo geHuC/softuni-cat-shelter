@@ -7,5 +7,5 @@ const home = (req, res) => {
 
 router.get('/', home);
 
-module.exports = home;
+module.exports = router;
 

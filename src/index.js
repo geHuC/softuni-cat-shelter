@@ -1,8 +1,16 @@
 const express = require('express');
+const handlebars = require('express-handlebars');
 
 const app = express();
 
-app.get('/', (req, res) => {
+app.engine('hbs', handlebars({
+    extname:'hbs'
+}));
+
+app.set('view engine', 'hbs');
+
+
+app.all('/', (req, res) => {
     res.send('Hello World!2');
 })
 

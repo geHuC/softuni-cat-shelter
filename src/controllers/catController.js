@@ -25,8 +25,11 @@ const addCatPost = async (req, res) => {
 
 const shelterCatView = async (req, res) => {
     let cat = await catSevice.getById(req.params.catId);
-    console.log(cat);
-    res.render('catShelter',{cat});
+    res.render('catShelter', { cat });
+}
+const shelterCatPost = async (req, res) => {
+    await catSevice.deleteById(req.params.catId);
+    res.redirect('/');
 }
 
 router.get('/add-cat', addCatView);
@@ -34,6 +37,7 @@ router.post('/add-cat', upload.any(), addCatPost);
 router.get('/add-breed', addBreedView);
 router.post('/add-breed', addBreedPost);
 router.get('/shelter/:catId', shelterCatView)
+router.post('/shelter/:catId',shelterCatPost)
 
 
 module.exports = router;

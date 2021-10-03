@@ -10,9 +10,12 @@ const create = async (req, file) => {
         image
     });
 }
-
+const all = async () => {
+    return await Cat.find({}).populate('breed').lean();
+}
 const catSevice = {
     create,
+    all
 }
 
 module.exports = catSevice;

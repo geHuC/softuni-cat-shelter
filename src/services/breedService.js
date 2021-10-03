@@ -9,9 +9,12 @@ const create = async (type) => {
     
     await Breed.create({breed: type});
 }
-
+const all = async() => {
+    return await Breed.find({}).lean();
+}
 const breedService = {
     create,
+    all,
 }
 
 module.exports = breedService;

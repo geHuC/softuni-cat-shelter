@@ -2,8 +2,9 @@ const express = require('express');
 const breedService = require('../services/breedService.js');
 const router = express.Router();
 
-const addCatView = (req, res) => {
-    res.render('addCat');
+const addCatView = async (req, res) => {
+    let breeds = await breedService.all();
+    res.render('addCat',{options: breeds});
 }
 
 const addBreedView = (req, res) => {

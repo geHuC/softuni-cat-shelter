@@ -13,9 +13,13 @@ const create = async (req, file) => {
 const all = async () => {
     return await Cat.find({}).populate('breed').lean();
 }
+const getById = async (id) => {
+    return await Cat.findById(id).populate('breed').lean();
+}
 const catSevice = {
     create,
-    all
+    all,
+    getById,
 }
 
 module.exports = catSevice;

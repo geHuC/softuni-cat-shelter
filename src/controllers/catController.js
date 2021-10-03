@@ -1,4 +1,5 @@
 const express = require('express');
+const upload = require('../config/multer.js');
 const breedService = require('../services/breedService.js');
 const router = express.Router();
 
@@ -16,8 +17,13 @@ const addBreedPost = async (req, res) => {
     await breedService.create(breed);
     res.redirect('/');
 }
+const addCatPost = async(req,res) => {
+    console.log(req.body);
+    console.log(req.files);
+}
 
 router.get('/add-cat', addCatView);
+router.post('/add-cat', upload.any(), addCatPost);
 router.get('/add-breed', addBreedView);
 router.post('/add-breed', addBreedPost);
 

@@ -9,7 +9,7 @@ require('./config/mongoose')();
 initHandlebars(app);
 
 //require('./config/hadlebars.js')(app); alt way of doing it in one row 
-
+app.use(express.urlencoded());
 app.use(express.static(path.resolve(__dirname,'./public')));
 app.use(routes);
 

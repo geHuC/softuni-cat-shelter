@@ -1,5 +1,5 @@
 const express = require('express');
-const Breed = require('../Models/Breed.js');
+const breedService = require('../services/breedService.js');
 const router = express.Router();
 
 const addCatView = (req, res) => {
@@ -12,15 +12,7 @@ const addBreedView = (req, res) => {
 
 const addBreedPost = async (req, res) => {
     let { breed } = req.body;
-
-    if(await Breed.exists({breed: breed})){
-        console.log(breed, ' already exists in the database');
-        res.redirect('/');
-        return;
-    }
-
-    let newBreed = new Breed({breed: breed});
-    await newBreed.save();
+    await breedService.create(breed);
     res.redirect('/');
 }
 
